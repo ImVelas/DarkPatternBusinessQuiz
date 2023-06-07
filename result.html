@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Danke</title>
+    <style>
+      body {
+        background-image: url("images/bg.jpg");
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f1f1f1;
+        padding-top: 50px;
+      }
+
+      .thank-you-container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .thank-you-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .thank-you-container p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .thank-you-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+
+      .thank-you-container button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thank-you-container">
+      <h2>Vielen Dank!</h2>
+
+      <p>
+        Danke fürs Teilnehmen an unserem Harry Potter Quiz. <br />
+        Hier ist die Auswertung. Der sprechende Hut hat dich zu folgendem Haus
+        zugeordnet:
+      </p>
+
+      <button onclick="goToHomepage()">zurück zum Anfang</button>
+    </div>
+
+    <script>
+      function goToHomepage() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
