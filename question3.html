@@ -94,7 +94,7 @@
     </style>
   </head>
   <body>
-    <div class="switchContainer">1 / 7</div>
+    <div class="switchContainer">3 / 7</div>
 
     <div class="question-container">
       <div id="question"></div>
@@ -107,28 +107,27 @@
       </div>
     </div>
     <div class="switchContainer">
+      <button class="switch" onclick="prev()">vorherige</button>
       <button class="switch" onclick="end()">beenden</button>
       <button class="switch" onclick="next()">weiter</button>
     </div>
 
     <script>
+      function prev() {
+        document.location.href = "question2.html";
+      }
+
       function end() {
         document.location.href = "result.html";
       }
 
       function next() {
-        document.location.href = "question2.html";
+        document.location.href = "question4.html";
       }
 
       //question and answers
-      var questionText =
-        "Welcher ist dein Lieblingscharakter aus Harry Potter?";
-      var answers = [
-        "Hermine Granger",
-        "Albus Dumbledor",
-        "Ron Weasley",
-        "Draco Malfoy",
-      ];
+      var questionText = "Welches Element passt am besten zu dir?";
+      var answers = ["Wasser", "Feuer", "Erde", "Luft"];
 
       //question text
       var questionElement = document.getElementById("question");

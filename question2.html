@@ -91,57 +91,84 @@
       .answer:hover {
         background-color: #45a049;
       }
+
+      .freetext-answer {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        margin-top: 10px;
+      }
+
+      .submit {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+
+      .submit:hover {
+        background-color: #45a049;
+      }
     </style>
   </head>
   <body>
-    <div class="switchContainer">1 / 7</div>
+    <div class="switchContainer">2 / 7</div>
 
     <div class="question-container">
       <div id="question"></div>
 
       <div id="answers">
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
+        <input
+          type="text"
+          id="freetextAnswer"
+          class="freetext-answer"
+          placeholder="Geben Sie hier Ihre Antwort ein"
+          required
+        />
+        <div class="form-group">
+          <button class="submit" type="submit" onclick="next()">
+            Absenden
+          </button>
+        </div>
       </div>
     </div>
     <div class="switchContainer">
+      <button class="switch" onclick="prev()">vorherige</button>
       <button class="switch" onclick="end()">beenden</button>
       <button class="switch" onclick="next()">weiter</button>
     </div>
 
     <script>
+      function prev() {
+        document.location.href = "question.html";
+      }
+
       function end() {
         document.location.href = "result.html";
       }
 
       function next() {
-        document.location.href = "question2.html";
+        document.location.href = "question3.html";
       }
 
       //question and answers
-      var questionText =
-        "Welcher ist dein Lieblingscharakter aus Harry Potter?";
-      var answers = [
-        "Hermine Granger",
-        "Albus Dumbledor",
-        "Ron Weasley",
-        "Draco Malfoy",
-      ];
+      var questionText = "Was ist/war dein Lieblingsfach in der Schule?";
 
       //question text
-      var questionElement = document.getElementById("question");
-      questionElement.innerText = questionText;
 
-      //button texts
-      var answerButtons = document.getElementsByClassName("answer");
-      for (var i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].innerText = answers[i];
-        answerButtons[i].onclick = () => {
-          next();
-        };
-      }
+      var questionElement = document.getElementById("question");
+
+      questionElement.innerText = questionText;
     </script>
   </body>
 </html>

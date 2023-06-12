@@ -54,14 +54,57 @@
 
       <p>
         Danke fürs Teilnehmen an unserem Harry Potter Quiz. <br />
-        Hier ist die Auswertung. Der sprechende Hut hat dich zu folgendem Haus
-        zugeordnet:
+        Basierend auf deinen Antworten haben wir ermittelt, dass du die meiste
+        Übereinstimmung mit folgendem Charakter hast:
       </p>
 
-      <button onclick="goToHomepage()">zurück zum Anfang</button>
+      <h3 id="characterName"></h3>
+
+      <button onclick="goToHomepage()">Zum Anfang</button>
     </div>
 
     <script>
+      var characterList = [
+        "Harry Potter",
+        "Ron Weasley",
+        "Hermine Granger",
+        "Neville Longbottom",
+        "Rubeus Hagrid",
+        "Ginny Weasley",
+        "Luna Lovegood",
+        "Fred Weasley",
+        "George Weasley",
+        "Hedwig",
+        "Albus Dumbledore",
+        "Minerva McGonagall",
+        "Dobby",
+        "Fawkes",
+        "Der sprechende Hut",
+        "Cho Chang",
+        "Draco Malfoy",
+        "Narzissa Malfoy",
+        "Sirius Black",
+        "Nymphadora Tonks",
+        "Remus Lupin",
+        "Fleur Delacour",
+        "Alastor Moody",
+        "Lily Potter",
+        "James Potter",
+        "Molly Weasley",
+        "Arthur Weasley",
+        "Severus Snape",
+        "Victor Krum",
+      ];
+
+      function getRandomCharacter() {
+        var randomIndex = Math.floor(Math.random() * characterList.length);
+        return characterList[randomIndex];
+      }
+
+      // Set the randomly selected character name in the HTML
+      var characterNameElement = document.getElementById("characterName");
+      characterNameElement.innerText = getRandomCharacter();
+
       function goToHomepage() {
         window.location.href = "index.html";
       }
