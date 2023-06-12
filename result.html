@@ -3,6 +3,12 @@
   <head>
     <title>Danke</title>
     <style>
+      @media screen and (max-width: 900px) {
+        body {
+          background-image: url("images/bgmobil.png");
+        }
+      }
+
       body {
         background-image: url("images/bg.jpg");
         background-size: cover;
@@ -13,7 +19,7 @@
       }
 
       .thank-you-container {
-        max-width: 400px;
+        max-width: 50%;
         margin: 0 auto;
         background-color: #fff;
         padding: 20px;
@@ -22,7 +28,12 @@
       }
 
       .thank-you-container h2 {
-        font-size: 24px;
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      .thank-you-container h3 {
+        font-size: 20px;
         margin-bottom: 20px;
       }
 
@@ -33,7 +44,7 @@
 
       .thank-you-container button {
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 12px;
         cursor: pointer;
         background-color: #4caf50;
         color: #fff;
