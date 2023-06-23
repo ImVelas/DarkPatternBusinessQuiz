@@ -1,0 +1,1 @@
+const rightAnswers = 0;
