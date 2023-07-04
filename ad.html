@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Werbung</title>
+    <style>
+      @media screen and (max-width: 900px) {
+        body {
+          background-image: url("images/bgmobil.png");
+        }
+      }
+
+      body {
+        background-image: url("images/bg.jpg");
+        background-size: cover;
+        padding-top: 160px;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+      }
+
+      .title {
+        font-size: 24px;
+        margin-bottom: 2px;
+      }
+
+      .advertisement-container {
+        min-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .advertisement-image {
+        width: 300px;
+        height: 200px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .advertisement-image:hover {
+        transform: scale(1.1);
+      }
+
+      .advertisement-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .advertisement-description {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .advertisement-button {
+        padding: 8px 12px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+
+      .advertisement-button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="advertisement-container">
+      <img class="advertisement-image" src="path/to/advertisement1.jpg" />
+      <h3 class="advertisement-title">Fictional Product 1</h3>
+      <p class="advertisement-description">
+        This is a description of the fictional product. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit.
+      </p>
+      <button class="advertisement-button">Learn More</button>
+    </div>
+    <div class="advertisement-container">
+      <img class="advertisement-image" src="path/to/advertisement2.jpg" />
+      <h3 class="advertisement-title">Fictional Product 2</h3>
+      <p class="advertisement-description">
+        This is a description of the fictional product. Lorem ipsum dolor sit
+        amet, consectetur adipiscing elit.
+      </p>
+      <button class="advertisement-button">Learn More</button>
+    </div>
+    <!-- Add more advertisement containers as needed -->
+  </body>
+</html>

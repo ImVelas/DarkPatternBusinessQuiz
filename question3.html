@@ -104,7 +104,9 @@
 
     <div class="question-container">
       <div id="question"></div>
-
+      <div id="timerContainer" style="display: none">
+        <h2 id="timerText"></h2>
+      </div>
       <div id="answers">
         <button class="answer"></button>
         <button class="answer"></button>
@@ -130,16 +132,18 @@
       function next() {
         document.location.href = "question4.html";
       }
+      var questionText =
+        "Wie heißt der Pervelle-Bruder, der den Elderstab vom Tod persönlich bekommen hat?";
+      var answers = [
+        "Marcus Pervelle",
+        "Antioch Pervelle",
+        "Cadmus Pervelle",
+        "Ignotus Pervelle ",
+      ];
 
-      //question and answers
-      var questionText = "Wie heißt der Pervelle-Bruder, der den Elderstab vom Tod persönlich bekommen hat?";
-      var answers = ["Marcus Pervelle", "Antioch Pervelle ", "Cadmus Pervelle", "Ignotus Pervelle "];
-
-      //question text
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
 
-      //button texts
       var answerButtons = document.getElementsByClassName("answer");
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];
@@ -147,6 +151,29 @@
           next();
         };
       }
+
+      // Timer
+      var timerContainer = document.getElementById("timerContainer");
+      var timerText = document.getElementById("timerText");
+      var timer = 7;
+      var timerInterval;
+
+      function startTimer() {
+        timerContainer.style.display = "block";
+        timerInterval = setInterval(updateTimer, 1000);
+      }
+
+      function updateTimer() {
+        if (timer > 0) {
+          timerText.innerText = "Timer: " + timer + " Sekunden";
+          timer--;
+        } else {
+          clearInterval(timerInterval);
+          timerContainer.style.display = "none";
+        }
+      }
+
+      startTimer();
     </script>
   </body>
 </html>
