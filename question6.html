@@ -94,6 +94,25 @@
         transition: background-color 0.3s ease;
       }
 
+      .a1 {
+        color: rgb(119, 16, 16);
+        font-size: 30px;
+      }
+
+      .a2 {
+        font-size: 10px;
+        color: #61d869;
+      }
+
+      .a3 {
+        color: rgb(224, 240, 10);
+        font-size: 20px;
+      }
+
+      .a4 {
+        color: rgb(73, 95, 216);
+      }
+
       .answer:hover {
         background-color: #45a049;
       }
@@ -106,10 +125,10 @@
       <div id="question"></div>
 
       <div id="answers">
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
+        <button class="answer a1"></button>
+        <button class="answer a2"></button>
+        <button class="answer a3"></button>
+        <button class="answer a4"></button>
       </div>
     </div>
     <div class="switchContainer">
@@ -133,7 +152,12 @@
 
       //question and answers
       var questionText = "Wann wurde Dumbledore geboren?";
-      var answers = ["September, 1880", "August, 1881", "Oktober, 1882", "Mai, 1885"];
+      var answers = [
+        "September, 1880",
+        "August, 1881",
+        "Oktober, 1882",
+        "Mai, 1885",
+      ];
 
       //question text
       var questionElement = document.getElementById("question");

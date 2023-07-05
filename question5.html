@@ -3,6 +3,12 @@
   <head>
     <title>Fragen</title>
     <style>
+      @media screen and (max-width: 900px) {
+        body {
+          background-image: url("images/bgmobil.png");
+        }
+      }
+
       body {
         background-image: url("images/bg.jpg");
         background-size: cover;
@@ -33,9 +39,17 @@
         align-self: center;
       }
 
-      .answer {
-        display: inline-block;
-        margin: 10px;
+      .answer-image {
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .answer-image:hover {
+        transform: scale(1.1);
       }
 
       .switchContainer {
@@ -76,9 +90,28 @@
         background-color: rgb(92, 114, 93);
       }
 
-      .answer {
-        padding: 10px 20px;
-        font-size: 16px;
+      #popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        display: none;
+        z-index: 999;
+      }
+
+      #popup p {
+        margin-bottom: 10px;
+      }
+
+      #popup button {
+        margin: 0 5px;
+        padding: 8px 12px;
+        font-size: 14px;
         cursor: pointer;
         background-color: #4caf50;
         color: #fff;
@@ -88,35 +121,7 @@
         transition: background-color 0.3s ease;
       }
 
-      .answer:hover {
-        background-color: #45a049;
-      }
-
-      .freetext-answer {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        margin-top: 10px;
-      }
-
-      .submit {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 10px;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
-      }
-
-      .submit:hover {
+      #popup button:hover {
         background-color: #45a049;
       }
     </style>
@@ -128,18 +133,10 @@
       <div id="question"></div>
 
       <div id="answers">
-        <input
-          type="text"
-          id="freetextAnswer"
-          class="freetext-answer"
-          placeholder="Geben Sie hier Ihre Antwort ein"
-          required
-        />
-        <div class="form-group">
-          <button class="submit" type="submit" onclick="next()">
-            Absenden
-          </button>
-        </div>
+        <img class="answer-image" />
+        <img class="answer-image" />
+        <img class="answer-image" />
+        <img class="answer-image" />
       </div>
     </div>
     <div class="switchContainer">
@@ -147,12 +144,15 @@
       <button class="switch" onclick="end()">beenden</button>
       <button class="switch" onclick="next()">weiter</button>
     </div>
-
+    <div id="popup">
+      <p>Are you sure you want to choose this answer?</p>
+      <button onclick="confirmAnswer(true)">Yes</button>
+      <button onclick="confirmAnswer(false)">No</button>
+    </div>
     <script>
       function prev() {
         document.location.href = "question4.html";
       }
-
       function end() {
         document.location.href = "result.html";
       }
@@ -162,12 +162,42 @@
       }
 
       //question and answers
-      var questionText =
-        "Wie viel zahlt Harry für sein Ticket für den fahrenden Ritter inklusive heißer Schokolade?";
+      var questionText = "Wie viele Treppen gibt es in Hogwarts?";
+      var answerImages = [
+        "images/antwort.png",
+        "images/antwort.png",
+        "images/antwort.png",
+        "images/antwort.png",
+      ];
 
       //question text
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
+
+      //answer images
+      var answerImageElements = document.getElementsByClassName("answer-image");
+      for (var i = 0; i < answerImageElements.length; i++) {
+        answerImageElements[i].src = answerImages[i];
+        answerImageElements[i].onclick = () => {
+          next();
+        };
+      }
+
+      // show confirmation popup
+      function showConfirmationPopup() {
+        var popupElement = document.getElementById("popup");
+        popupElement.style.display = "block";
+      }
+
+      // confirm answer
+      function confirmAnswer(shouldProceed) {
+        var popupElement = document.getElementById("popup");
+        popupElement.style.display = "none";
+
+        if (shouldProceed) {
+          next();
+        }
+      }
     </script>
   </body>
 </html>
