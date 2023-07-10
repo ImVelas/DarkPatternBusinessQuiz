@@ -94,32 +94,13 @@
         transition: background-color 0.3s ease;
       }
 
-      .a1 {
-        color: rgb(119, 16, 16);
-        font-size: 30px;
-      }
-
-      .a2 {
-        font-size: 10px;
-        color: #61d869;
-      }
-
-      .a3 {
-        color: rgb(224, 240, 10);
-        font-size: 20px;
-      }
-
-      .a4 {
-        color: rgb(73, 95, 216);
-      }
-
       .answer:hover {
         background-color: #45a049;
       }
     </style>
   </head>
   <body>
-    <div class="switchContainer">4 / 7</div>
+    <div class="switchContainer">9 / 9</div>
 
     <div class="question-container">
       <div id="question"></div>
@@ -134,29 +115,25 @@
     <div class="switchContainer">
       <button class="switch" onclick="prev()">vorherige</button>
       <button class="switch" onclick="end()">beenden</button>
-      <button class="switch" onclick="next()">weiter</button>
     </div>
 
     <script>
       function prev() {
-        document.location.href = "question3.html";
+        document.location.href = "question8.html";
       }
 
       function end() {
         document.location.href = "result.html";
       }
 
-      function next() {
-        document.location.href = "question5.html";
-      }
 
       //question and answers
-      var questionText = "Wann wurde Dumbledore geboren?";
+      var questionText = "Wie viel zahlt Harry für sein Ticket für den fahrenden Ritter inklusive heißer Schokolade?";
       var answers = [
-        "September, 1880",
-        "August, 1881",
-        "Oktober, 1882",
-        "Mai, 1885",
+        "Joanne Kathleen Rowling",
+        "Johanne Katherine Rowling",
+        "Johanne Kimberly Rowling",
+        "Joanne Kate Rowling",
       ];
 
       //question text
@@ -168,7 +145,7 @@
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];
         answerButtons[i].onclick = () => {
-          next();
+          end();
         };
       }
     </script>

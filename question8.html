@@ -39,9 +39,17 @@
       align-self: center;
     }
 
-    .answer {
-      display: inline-block;
-      margin: 10px;
+    .answer-image {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .answer-image:hover {
+      transform: scale(1.1);
     }
 
     .switchContainer {
@@ -82,9 +90,28 @@
       background-color: rgb(92, 114, 93);
     }
 
-    .answer {
-      padding: 10px 20px;
-      font-size: 16px;
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: none;
+      z-index: 999;
+    }
+
+    #popup p {
+      margin-bottom: 10px;
+    }
+
+    #popup button {
+      margin: 0 5px;
+      padding: 8px 12px;
+      font-size: 14px;
       cursor: pointer;
       background-color: #4caf50;
       color: #fff;
@@ -94,28 +121,26 @@
       transition: background-color 0.3s ease;
     }
 
-    .answer:hover {
+    #popup button:hover {
       background-color: #45a049;
-    }
-
-    .timer {
-      color: rgb(201, 42, 42);
     }
   </style>
 </head>
 <body>
-<div class="switchContainer">6 / 7</div>
+<div class="switchContainer">8 / 9</div>
 
 <div class="question-container">
   <div id="question"></div>
-  <div>
-    <img src="images/wizard.png">
-  </div>
+
   <div id="answers">
-    <button class="answer"></button>
-    <button class="answer"></button>
-    <button class="answer"></button>
-    <button class="answer"></button>
+    <div>
+      <img class="answer-image" />
+      <img class="answer-image" />
+    </div>
+    <div>
+      <img class="answer-image" />
+      <img class="answer-image" />
+    </div>
   </div>
 </div>
 <div class="switchContainer">
@@ -126,7 +151,7 @@
 
 <script>
   function prev() {
-    document.location.href = "question5.html";
+    document.location.href = "question7.html";
   }
 
   function end() {
@@ -134,24 +159,27 @@
   }
 
   function next() {
-    document.location.href = "question7.html";
+    document.location.href = "question9.html";
   }
-  var questionText =
-          "Wie heißt der Mann vorne im Bild?";
-  var answers = [
-    "Kingsley Shacklebolt",
-    "Cornelius Fudge",
-    "Rufus Scrimgeour",
-    "Pius Thicknesse",
+
+  //question and answers
+  var questionText = "Wie heißt die Eule von Harry?";
+  var answerImages = [
+    "images/Trevor.png",
+    "images/Krummbein.png",
+    "images/Hedwig.png",
+    "images/Peeves.png"
   ];
 
+  //question text
   var questionElement = document.getElementById("question");
   questionElement.innerText = questionText;
 
-  var answerButtons = document.getElementsByClassName("answer");
-  for (var i = 0; i < answerButtons.length; i++) {
-    answerButtons[i].innerText = answers[i];
-    answerButtons[i].onclick = () => {
+  //answer images
+  var answerImageElements = document.getElementsByClassName("answer-image");
+  for (var i = 0; i < answerImageElements.length; i++) {
+    answerImageElements[i].src = answerImages[i];
+    answerImageElements[i].onclick = () => {
       next();
     };
   }
