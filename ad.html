@@ -13,7 +13,6 @@
       body {
         background-image: url("images/bg.jpg");
         background-size: cover;
-        padding-top: 160px;
         font-family: Arial, sans-serif;
         text-align: center;
         padding-top: 50px;
@@ -30,7 +29,8 @@
 
       .advertisement-container {
         min-width: 400px;
-        margin: 0 auto;
+        max-width: 620px;
+        margin: 50px auto;
         background-color: #fff;
         padding: 20px;
         border-radius: 10px;
@@ -53,6 +53,7 @@
       .advertisement-title {
         font-size: 18px;
         margin-bottom: 10px;
+        color: red;
       }
 
       .advertisement-description {
@@ -65,7 +66,7 @@
         padding: 8px 12px;
         font-size: 14px;
         cursor: pointer;
-        background-color: #4caf50;
+        background-color: green;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -80,23 +81,33 @@
   </head>
   <body>
     <div class="advertisement-container">
-      <img class="advertisement-image" src="path/to/advertisement1.jpg" />
-      <h3 class="advertisement-title">Fictional Product 1</h3>
+      <img class="advertisement-image" src="/images/harry-potter-themenpark.jpg" />
+      <h3 class="advertisement-title">!!! Die Harry Potter Themenwelt erwartet dich !!!</h3>
       <p class="advertisement-description">
-        This is a description of the fictional product. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit.
+        Erlebe Hogwarts wie nie zuvor, erkunde versteckte Korridore, trinke Butterbier und
+        tritt dem Quidditch-Team bei. Erlebe die Spannung der Zauberschule und tauche ein in den Zauber von Hogsmeade.
+        Verpasse nicht diese einzigartige Gelegenheit, deine Lieblingscharaktere zum Leben zu erwecken und Seite an
+        Seite mit ihnen gegen die dunklen Kräfte zu kämpfen.
       </p>
-      <button class="advertisement-button">Learn More</button>
+      <button class="advertisement-button" onclick="prev()">Zurück</button>
     </div>
     <div class="advertisement-container">
-      <img class="advertisement-image" src="path/to/advertisement2.jpg" />
-      <h3 class="advertisement-title">Fictional Product 2</h3>
+      <img class="advertisement-image" src="/images/harry-potter-fan-artikel.jpg" />
+      <h3 class="advertisement-title">!!! Exklusives Fan-Angebot !!!</h3>
       <p class="advertisement-description">
-        This is a description of the fictional product. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit.
+        Entdecke unsere exklusive Kollektion von Harry Potter Fan Artikeln! Nur für echte Zauberer und Hexen -
+        jetzt mit 10% Rabatt als Dankeschön für deine Treue! Tauche ein in die Magie mit Zauberstäben, magischen
+        Schmuckstücken und zauberhaften Accessoires. Verpasse nicht diese Gelegenheit, um deine Sammlung zu erweitern!
+        Angebot nur für begrenzte Zeit.
       </p>
-      <button class="advertisement-button">Learn More</button>
+      <button class="advertisement-button" onclick="prev()">Zurück</button>
     </div>
     <!-- Add more advertisement containers as needed -->
+
+  <script>
+    function prev() {
+      document.location.href = "question2.html";
+    }
+  </script>
   </body>
 </html>

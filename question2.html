@@ -13,7 +13,6 @@
       body {
         background-image: url("images/bg.jpg");
         background-size: cover;
-        padding-top: 160px;
         font-family: Arial, sans-serif;
         text-align: center;
         padding-top: 50px;
@@ -189,7 +188,9 @@
       ];
 
       var adImageElement = document.querySelector(".ad-image");
-      adImageElement.addEventListener("click", () => {next()});
+      adImageElement.addEventListener("click", () => {
+        document.location.href = "ad.html";
+      });
 
       var answerImageElements = document.getElementsByClassName("answer-image");
       for (var i = 0; i < answerImageElements.length; i++) {
