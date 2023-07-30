@@ -189,7 +189,30 @@
 
       var adImageElement = document.querySelector(".ad-image");
       adImageElement.addEventListener("click", () => {
+        let data = JSON.parse(localStorage.getItem('formData'));
+        if (!data) {
+          data = [
+            {
+              name: 'Opt-Out',
+              description: 'pressed?',
+              value: false,
+            },
+            {
+              name: 'Preselection',
+              description: 'disbaled?',
+              value: false,
+            },
+            {
+              name: 'Disguised Ads',
+              description: 'clickCount',
+              value: 0,
+            },
+          ];
+        }
+
         data[2].value++;
+        localStorage.setItem('formData', JSON.stringify(data));
+
         document.location.href = "ad.html";
       });
 
@@ -210,6 +233,5 @@
         }
       }
     </script>
-    <script src="tracking.js"></script>
   </body>
 </html>

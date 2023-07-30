@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $filename = 'data_' . date('Ymd_His') . '.csv';
 
     // Define the path to save the CSV file on the server
-    $savePath = './csv_files/' . $filename; // You can change the directory if needed
+    $savePath = './csv_files/' . $filename;
 
     // Write the data to the CSV file
     file_put_contents($savePath, $csvContent);

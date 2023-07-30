@@ -168,7 +168,28 @@
   </div>
   <script src="cookie-popup.js"></script>
   <script>
+    const data = [
+      {
+        name: 'Opt-Out',
+        description: 'pressed?',
+        value: false
+      },
+      {
+        name: 'Preselection',
+        description: 'disbaled?',
+        value: false
+      },
+      {
+        name: 'Disguised Ads',
+        description: 'clickCount',
+        value: 0
+      }
+    ];
+
     function start() {
+      // Store the data in localStorage
+      localStorage.setItem('formData', JSON.stringify(data));
+
       window.location.href = "question.html"
     }
     
