@@ -1,0 +1,173 @@
+@media screen and (max-width: 900px) {
+    body {
+        background-image: url("images/bgmobil.png");
+    }
+}
+
+body {
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding-top: 50px;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /* Add this line */
+}
+.form-group .send-button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.form-group .send-button:hover {
+    background-color: #45a049;
+}
+
+.form-group select {
+    height: 45px;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    position: fixed;
+    left: 15%;
+    background-color: #fff;
+    width: fit-content;
+    align-self: center;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.cookie-popup {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.cookie-button-deny {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #a72c27;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.cookie-button:hover {
+    background-color: #45a049;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.747);
+    z-index: 1;
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        background-image: url("images/bgmobil.png");
+    }
+}
+
+.subtle-button {
+    font-size: 12px;
+    cursor: pointer;
+    color: #0e480f;
+    border: none;
+    background-color: white;
+}
+
+.subtle-button:hover  {
+    text-decoration-line: underline;
+    font-size: 12px;
+    cursor: pointer;
+    color: #45a049;
+    border: none;
+    background-color: white;
+}
+.checkbox-text {
+    font-weight: bold;
+    margin-left: 5px;
+}

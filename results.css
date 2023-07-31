@@ -1,0 +1,54 @@
+@media screen and (max-width: 900px) {
+    body {
+        background-image: url("images/bgmobil.png");
+    }
+}
+
+body {
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding-top: 50px;
+}
+
+.thank-you-container {
+    max-width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-container h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.thank-you-container h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.thank-you-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.thank-you-container button {
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.thank-you-container button:hover {
+    background-color: #45a049;
+}

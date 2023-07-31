@@ -3,102 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Fragen</title>
-    <style>
-      @media screen and (max-width: 900px) {
-        body {
-          background-image: url("images/bgmobil.png");
-        }
-      }
-
-      body {
-        background-image: url("images/bg.jpg");
-        background-size: cover;
-        padding-top: 160px;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-direction: column;
-      }
-
-      .title {
-        font-size: 24px;
-        margin-bottom: 2px;
-      }
-
-      #question {
-        font-size: 18px;
-        margin-bottom: 20px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-        display: inline-block;
-        width: fit-content;
-        align-self: center;
-      }
-
-      .answer {
-        display: inline-block;
-        margin: 10px;
-      }
-
-      .switchContainer {
-        background-color: #fff;
-        width: fit-content;
-        align-self: center;
-        padding: 20px;
-        margin-top: 15px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .question-container {
-        min-width: 400px;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .switch {
-        padding: 8px 10px;
-        font-size: 12px;
-        font-style: italic;
-        font-weight: 400;
-        cursor: pointer;
-        background-color: #849986;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
-      }
-
-      .switch:hover {
-        background-color: rgb(92, 114, 93);
-      }
-
-      .answer {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #4caf50;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
-      }
-
-      .answer:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link rel="stylesheet" href="question.css"/>
   </head>
   <body>
     <div class="switchContainer">7 / 9</div>
@@ -107,10 +12,10 @@
       <div id="question"></div>
 
       <div id="answers">
-        <button class="answer a1"></button>
-        <button class="answer a2"></button>
-        <button class="answer a3"></button>
-        <button class="answer a4"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
       </div>
     </div>
     <div class="switchContainer">
@@ -150,7 +55,7 @@
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];
         answerButtons[i].onclick = () => {
-          end();
+          next();
         };
       }
     </script>
