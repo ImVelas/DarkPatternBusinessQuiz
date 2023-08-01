@@ -8,36 +8,48 @@
 <body>
   <div id="Overlay" class="overlay"></div>
   <div class="form-container">
-    <h2>Quizanmeldung</h2>
     <div class="container" id="popup">
-      <p>This website uses cookies to ensure you get the best experience. By continuing to use this site, you consent to the use of cookies.</p>
-      <div>
-        <button id="cookieDenyButton" class="cookie-button-deny">Deny</button>
-        <button id="cookieAcceptButton" class="cookie-button">Accept</button>
+    <p>This website uses cookies to ensure you get the best experience. By continuing to use this site, you consent to the use of cookies.</p>
+    <div>
+      <button id="cookieDenyButton" class="cookie-button-deny">Deny</button>
+      <button id="cookieAcceptButton" class="cookie-button">Accept</button>
+    </div>
+  </div>
+    <div class="sign-in-container">
+      <h2>Quizanmeldung</h2>
+      <div class="context-text-box">
+        <div class="context-text" >
+          <div>
+            Hallo und Willkommen zum Quiz! Wenn du dein Ergebniss zugeschickt haben möchtest, melde dich an und du bekommst sie am Ende des Quizzes zugesendet!
+          </div>
+        </div>
+      </div>
+      <div class="from-group-container">
+        <div class="form-group-inner">
+          <div class="content-group-container">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Email hier eingeben" required />
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" checked="true">
+            <span class="checkbox-text">Yes, I want to hear about new Quizzes!</span>
+          </div>
+          <div class="send-button-container">
+            <input type="button" class="send-button" value="Send Email">
+            <input type="button" class="subtle-button" value="Opt-Out">
+          </div>
+        </div>
+        <div class="form-group-inner">
+          <form>
+            <div class="content-group-container">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Name hier eingeben" value="test" required>
+            </div>
+              <button class="send-button" type="button" onclick= 'start()'>Quiz starten</button>
+          </form>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="text" id="email" name="email" placeholder="Email hier eingeben" required>
-    </div>
-    <div class="form-group">
-      <div>
-        <input type="checkbox" checked="true"><span class="checkbox-text">Yes, I want to hear about new Quizzes!</span>
-      </div>
-      <input type="button" class="send-button" value="Send Email">
-      <input type="button" class="subtle-button" value="Opt-Out">
-    </div>
-    <form>
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name hier eingeben" value="test" required>
-      </div>
-
-      <div class="form-group">
-        <button type="button" onclick= 'start()'>Quiz starten</button>
-
-      </div>
-    </form>
   </div>
   <script src="cookie-popup.js"></script>
   <script>
