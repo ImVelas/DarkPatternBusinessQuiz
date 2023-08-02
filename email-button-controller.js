@@ -9,6 +9,7 @@ window.addEventListener("load", function () {
 
     nameInput.disabled = true;
     startButton.disabled = true;
+    emailCheckbox.checked = true;
 
     sendButton.addEventListener("click", emailButtonsClicked);
     optOutButton.addEventListener("click", emailButtonsClicked);
