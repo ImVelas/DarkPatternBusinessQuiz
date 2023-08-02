@@ -11,22 +11,22 @@ body {
     text-align: center;
     background-color: #f1f1f1;
     display: flex;
-    padding: 189px 669px;
+    padding: 100px 669px;
     justify-content: center;
     align-items: center;
 }
 .sign-in-container {
     display: flex;
+    padding: 53px 44px;
     flex-direction: column;
     align-items: center;
+    gap: 16px;
 }
 
 .form-container {
     display: flex;
-    padding: 53px 44px;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 10px;
@@ -39,6 +39,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-top: 0px;
 }
 
 .form-group-inner .send-button {
@@ -48,7 +49,6 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 16px;
-    cursor: pointer;
     background-color: #4CAF50;
     color: #fff;
     border: none;
@@ -61,10 +61,15 @@ body {
     background-color: #45a049;
 }
 
+.form-group-inner .send-button:disabled {
+    background-color: #A0C8A1;
+    cursor: default;
+}
+
 .form-group-inner {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 11px;
 }
 
@@ -90,19 +95,24 @@ body {
     line-height: normal;
 }
 
-.content-group-container input[type="text"] {
+.content-group-container .value-input {
     display: flex;
-    width: 488px;
+    width: 153px;
     padding: 11px 336px 12px 10px;
     align-items: center;
     border-radius: 3px;
     border: 1px solid #BDBDBD;
-    color: #BDBDBD;
+    color: #000000;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
+
+.content-group-container .value-input:disabled {
+    color: #BDBDBD;
+}
+
 
 .context-text-box {
     display: flex;
@@ -125,12 +135,12 @@ body {
 
 .container {
     position: fixed ;
-    left: 25%;
+    left: 20%;
     background-color: #fff;
     width: fit-content;
     align-self: center;
     padding: 20px;
-    margin-top: 15px;
+    margin-top: 10%;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -219,20 +229,31 @@ body {
     background-color: #45a049;
 }
 
+.send-button-container .send-button:disabled {
+    background-color: #A0C8A1;
+    cursor: default;
+}
+
 .subtle-button {
     font-size: 12px;
     cursor: pointer;
-    color: #0e480f;
+    color: #83b786;
     border: none;
     background-color: white;
 }
 
 .subtle-button:hover  {
     text-decoration-line: underline;
-    font-size: 12px;
     cursor: pointer;
     color: #45a049;
-    border: none;
+    background-color: white;
+}
+
+.subtle-button:disabled  {
+    text-decoration-line: none;
+    cursor: default;
+    font-size: 12px;
+    color: #A0C8A1;
     background-color: white;
 }
 
@@ -243,10 +264,13 @@ body {
     align-self: stretch;
 }
 
-.checkbox-container span{
+.checkbox-container .checkbox-text {
     color: #000;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-align: left;
+    cursor: default;
 }
+

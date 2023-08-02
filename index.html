@@ -9,10 +9,10 @@
   <div id="Overlay" class="overlay"></div>
   <div class="form-container">
     <div class="container" id="popup">
-    <p>This website uses cookies to ensure you get the best experience. By continuing to use this site, you consent to the use of cookies.</p>
+    <p>Diese Webseite nutzt Cookies um das bestmögliche Erlebniss zu garantieren. Mit fortfahrender Nutzung dieser Seite stimmen Sie dem Nutzen von Cookies zu.</p>
     <div>
-      <button id="cookieDenyButton" class="cookie-button-deny">Deny</button>
-      <button id="cookieAcceptButton" class="cookie-button">Accept</button>
+      <button id="cookieDenyButton" class="cookie-button-deny">Ablehnen</button>
+      <button id="cookieAcceptButton" class="cookie-button">Akzeptieren</button>
     </div>
   </div>
     <div class="sign-in-container">
@@ -24,15 +24,15 @@
           </div>
         </div>
       </div>
-      <div class="from-group-container">
+      <div class="form-group-container">
         <div class="form-group-inner">
           <div class="content-group-container">
             <label for="email">Email:</label>
-            <input type="text" id="email" name="email" placeholder="Email hier eingeben" required />
+            <input type="text" class="value-input" id="email" name="email" placeholder="Email hier eingeben" required />
           </div>
           <div class="checkbox-container">
-            <input type="checkbox" checked="true">
-            <span class="checkbox-text">Yes, I want to hear about new Quizzes!</span>
+            <input class="email-checkbox" type="checkbox" checked="true">
+            <span class="checkbox-text">Ja, Ich möchte spannende Neuigkeiten über neue Quizze erhalten!</span>
           </div>
           <div class="send-button-container">
             <input type="button" class="send-button" value="Send Email">
@@ -40,10 +40,10 @@
           </div>
         </div>
         <div class="form-group-inner">
-          <form>
+          <form class="form-group-inner">
             <div class="content-group-container">
               <label for="name">Name:</label>
-              <input type="text" id="name" name="name" placeholder="Name hier eingeben" value="test" required>
+              <input type="text" class="value-input" id="name" name="name" placeholder="Name hier eingeben" value="test" required>
             </div>
               <button class="send-button" type="button" onclick= 'start()'>Quiz starten</button>
           </form>
@@ -52,6 +52,7 @@
     </div>
   </div>
   <script src="cookie-popup.js"></script>
+  <script src="email-button-controller.js"></script>
   <script>
     const data = [
       {
