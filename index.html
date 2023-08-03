@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Harry Potter Quiz</title>
@@ -56,6 +56,11 @@
   <script>
     const data = [
       {
+        name: 'Cookie-Selection',
+        description: 'denied?',
+        value: false
+      },
+      {
         name: 'Opt-Out',
         description: 'pressed?',
         value: false
@@ -72,14 +77,19 @@
       }
     ];
 
+    var cookieElement = document.querySelector(".cookie-button-deny");
+    cookieElement.addEventListener("click", () => {
+      data[0].value = true;
+    });
+
     var optOutElement = document.querySelector("#opt-out");
     optOutElement.addEventListener("click", () => {
-      data[0].value = true;
+      data[1].value = true;
     });
 
     var preselectionElement = document.querySelector(".email-checkbox");
     preselectionElement.addEventListener("click", () => {
-      data[1]. value = true;
+      data[2]. value = true;
     });
 
     function start() {
