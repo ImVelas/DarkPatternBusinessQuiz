@@ -97,8 +97,8 @@ body {
 
 .content-group-container .value-input {
     display: flex;
-    width: 153px;
-    padding: 11px 336px 12px 10px;
+    width: 200px;
+    padding: 11px 289px 12px 10px;
     align-items: center;
     border-radius: 3px;
     border: 1px solid #BDBDBD;

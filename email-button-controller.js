@@ -13,6 +13,7 @@ window.addEventListener("load", function () {
 
     sendButton.addEventListener("click", emailButtonsClicked);
     optOutButton.addEventListener("click", emailButtonsClicked);
+    nameInput.addEventListener("input", checkNameInput);
 
     function emailButtonsClicked () {
         sendButton.disabled = true;
@@ -21,6 +22,19 @@ window.addEventListener("load", function () {
         emailInput.disabled = true;
 
         nameInput.disabled = false;
-        startButton.disabled = false;
+    }
+
+    function checkNameInput () {
+        if(nameInput.value === "") {
+            startButton.disabled = true;
+            nameInput.placeholder = "Bitte Namen eingeben!";
+            nameInput.style.color = "red";
+            nameInput.style.borderColor = "red";
+        } else {
+            startButton.disabled = false;
+            nameInput.placeholder ="Name hier eingeben"
+            nameInput.style.color = "#000000";
+            nameInput.style.borderColor = "#BDBDBD";
+        }
     }
 });
