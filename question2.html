@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Fragen</title>
@@ -13,12 +13,12 @@
 
       <div id="answers">
         <div>
-          <img class="answer-image" />
-          <img class="answer-image" />
+          <img class="answer-image" alt="Antwortmöglichkeit 1"/>
+          <img class="answer-image" alt="Antwortmöglichkeit 2"/>
         </div>
         <div>
-          <img class="answer-image" />
-          <img class="ad-image" src = "images/v_247.png"/>
+          <img class="answer-image" alt="Antwortmöglichkeit 3"/>
+          <img class="ad-image" alt="Antwortmöglichkeit 4" src = "images/v_247.png"/>
         </div>
       </div>
     </div>
@@ -55,6 +55,11 @@
         if (!data) {
           data = [
             {
+              name: 'Cookie-Selection',
+              description: 'denied?',
+              value: false
+            },
+            {
               name: 'Opt-Out',
               description: 'pressed?',
               value: false,
@@ -68,11 +73,11 @@
               name: 'Disguised Ads',
               description: 'clickCount',
               value: 0,
-            },
+            }
           ];
         }
 
-        data[2].value++;
+        data[3].value++;
         localStorage.setItem('formData', JSON.stringify(data));
 
         document.location.href = "ad.html";
@@ -85,8 +90,6 @@
           proceedToNextQuestion(true);
         };
       }
-
-
 
       // confirm answer
       function proceedToNextQuestion(shouldProceed) {
