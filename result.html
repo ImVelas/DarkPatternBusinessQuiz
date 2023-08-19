@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Danke</title>
@@ -7,20 +7,24 @@
   </head>
   <body>
     <div class="thank-you-container">
-      <h2>Vielen Dank!</h2>
+      <h2 id="heading"></h2>
+
+      <p id="characterName"></p>
 
       <p>
-        Danke fürs Teilnehmen an unserem Harry Potter Quiz. <br />
-        Basierend auf deinen Antworten haben wir ermittelt, dass du die meiste
-        Uebereinstimmung mit folgendem Charakter hast:
+        Bitte nimm dir noch einen Moment Zeit, um einen kurzen Fragebogen auszufüllen.
+        Wir hoffen du hattest Spaß und wünschen dir noch einen magischen Tag!
+        <br>Eve & Faye
       </p>
-
-      <h3 id="characterName"></h3>
 
       <button onclick="goToHomepage()">Zum Anfang</button>
     </div>
 
     <script>
+      var headingList = [
+        "Meisterhafte Leistung",
+        "Magisches Resultat"
+      ]
       var characterList = [
         "Herzlichen Glückwunsch, du hast dieses Harry Potter-Quiz mit Bravour gemeistert! Dein umfangreiches Wissen " +
         "über die magische Welt von Harry Potter ist wahrlich beeindruckend. Du bist zweifellos einer der besten " +
@@ -32,14 +36,17 @@
         "steht dir offen.",
       ];
 
-      function getRandomCharacter() {
-        var randomIndex = Math.floor(Math.random() * characterList.length);
-        return characterList[randomIndex];
+      function getRandomFromList(randomIndex, list) {
+        return list[randomIndex];
       }
 
-      // Set the randomly selected character name in the HTML
+      var randomIndex = Math.floor(Math.random() * characterList.length);
+
+      var headingElement = document.getElementById("heading");
+      headingElement.innerText = getRandomFromList(randomIndex, headingList);
+
       var characterNameElement = document.getElementById("characterName");
-      characterNameElement.innerText = getRandomCharacter();
+      characterNameElement.innerText = getRandomFromList(randomIndex, characterList);
 
       function goToHomepage() {
         window.location.href = "index.html";
