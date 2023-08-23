@@ -6,46 +6,38 @@
     <link rel="stylesheet" href="question.css"/>
   </head>
   <body>
-    <div class="switchContainer">4 / 7</div>
+    <div class="switchContainer">4 / 15</div>
 
     <div class="question-container">
       <div id="question"></div>
-
+      <div id="timerContainer" style="display: none">
+        <h2 class="timer" id="timerText"></h2>
+      </div>
       <div id="answers">
-        <button class="answer a1"></button>
-        <button class="answer a2"></button>
-        <button class="answer a3"></button>
-        <button class="answer a4"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
       </div>
     </div>
 
     <script>
-      function prev() {
-        document.location.href = "question3.html";
-      }
-
-      function end() {
-        document.location.href = "result.html";
-      }
-
       function next() {
         document.location.href = "question5.html";
       }
 
-      //question and answers
-      var questionText = "Wann wurde Dumbledore geboren?";
+      var questionText =
+        "Welchen Zauberspruch verwendet man, um Gegenstände schweben zu lassen?";
       var answers = [
-        "September, 1880",
-        "August, 1881",
-        "Oktober, 1882",
-        "Mai, 1885",
+        "Expelliarmus",
+        "Expecto Patronum",
+        "Wingardium Leviosa",
+        "Lumos",
       ];
 
-      //question text
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
 
-      //button texts
       var answerButtons = document.getElementsByClassName("answer");
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];

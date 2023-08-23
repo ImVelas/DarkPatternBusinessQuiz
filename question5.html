@@ -6,76 +6,68 @@
     <link rel="stylesheet" href="question.css"/>
   </head>
   <body>
-    <div class="switchContainer">5 / 7</div>
+    <div class="switchContainer">5 / 15</div>
 
     <div class="question-container">
       <div id="question"></div>
-
+      <div id="timerContainer" style="display: none">
+        <h2 class="timer" id="timerText"></h2>
+      </div>
       <div id="answers">
-        <div>
-          <img class="answer-image" />
-          <img class="answer-image" />
-        </div>
-        <div>
-          <img class="answer-image" />
-          <img class="answer-image" />
-        </div>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
       </div>
     </div>
-    <div id="popup">
-      <p>Are you sure you want to choose this answer?</p>
-      <button onclick="confirmAnswer(true)">Yes</button>
-      <button onclick="confirmAnswer(false)">No</button>
-    </div>
-    <script>
-      function prev() {
-        document.location.href = "question4.html";
-      }
-      function end() {
-        document.location.href = "result.html";
-      }
 
+    <script>
       function next() {
         document.location.href = "question6.html";
       }
 
-      //question and answers
-      var questionText = "Wer beschwört im Raum der Wünsche das Dämonsfeuer?";
-      var answerImages = [
-        "images/Draco Malfoy.png",
-        "images/Vincent Crabbe.png",
-        "images/Blaise Zabini.png",
-        "images/Ronald Weasley.png",
+      var questionText =
+        "Wie heißt der Pervelle-Bruder, der den Elderstab vom Tod persönlich bekommen hat?";
+      var answers = [
+        "Marcus Pervelle",
+        "Antioch Pervelle",
+        "Cadmus Pervelle",
+        "Ignotus Pervelle ",
       ];
 
-      //question text
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
 
-      //answer images
-      var answerImageElements = document.getElementsByClassName("answer-image");
-      for (var i = 0; i < answerImageElements.length; i++) {
-        answerImageElements[i].src = answerImages[i];
-        answerImageElements[i].onclick = () => {
+      var answerButtons = document.getElementsByClassName("answer");
+      for (var i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].innerText = answers[i];
+        answerButtons[i].onclick = () => {
           next();
         };
       }
 
-      // show confirmation popup
-      function showConfirmationPopup() {
-        var popupElement = document.getElementById("popup");
-        popupElement.style.display = "block";
+      // Timer
+      var timerContainer = document.getElementById("timerContainer");
+      var timerText = document.getElementById("timerText");
+      var timer = 10;
+      var timerInterval;
+
+      function startTimer() {
+        timerContainer.style.display = "block";
+        timerInterval = setInterval(updateTimer, 1000);
       }
 
-      // confirm answer
-      function confirmAnswer(shouldProceed) {
-        var popupElement = document.getElementById("popup");
-        popupElement.style.display = "none";
-
-        if (shouldProceed) {
-          next();
+      function updateTimer() {
+        if (timer > 0) {
+          timerText.innerText = "Timer: " + timer + " Sekunden";
+          timer--;
+        } else {
+          clearInterval(timerInterval);
+          timerContainer.style.display = "none";
         }
       }
+
+      startTimer();
     </script>
   </body>
 </html>

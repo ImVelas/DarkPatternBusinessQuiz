@@ -1,58 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>Fragen</title>
-  <link rel="stylesheet" href="question.css"/>
-</head>
-<body>
-<div class="switchContainer">6 / 7</div>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Fragen</title>
+    <link rel="stylesheet" href="question.css"/>
+  </head>
+  <body>
+    <div class="switchContainer">6 / 15</div>
 
-<div class="question-container">
-  <div id="question"></div>
-  <div>
-    <img src="images/wizard.png">
-  </div>
-  <div id="answers">
-    <button class="answer"></button>
-    <button class="answer"></button>
-    <button class="answer"></button>
-    <button class="answer"></button>
-  </div>
-</div>
+    <div class="question-container">
+      <div id="question"></div>
+      <div id="timerContainer" style="display: none">
+        <h2 class="timer" id="timerText"></h2>
+      </div>
+      <div id="answers">
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+        <button class="answer"></button>
+      </div>
+    </div>
 
-<script>
-  function prev() {
-    document.location.href = "question5.html";
-  }
+    <script>
+      function next() {
+        document.location.href = "question7.html";
+      }
 
-  function end() {
-    document.location.href = "result.html";
-  }
+      var questionText =
+        "Wie heißt der Lehrer für Verteidigung gegen die Dunklen Künste im ersten Schuljahr von Harry?";
+      var answers = [
+        "Professor Snape",
+        "Professor McGonagall",
+        "Professor Quirrell",
+        "Professor Dumbledore",
+      ];
 
-  function next() {
-    document.location.href = "question7.html";
-  }
-  var questionText =
-          "Wie heißt der Mann vorne im Bild?";
-  var answers = [
-    "Kingsley Shacklebolt",
-    "Cornelius Fudge",
-    "Rufus Scrimgeour",
-    "Pius Thicknesse",
-  ];
+      var questionElement = document.getElementById("question");
+      questionElement.innerText = questionText;
 
-  var questionElement = document.getElementById("question");
-  questionElement.innerText = questionText;
-
-  var answerButtons = document.getElementsByClassName("answer");
-  for (var i = 0; i < answerButtons.length; i++) {
-    answerButtons[i].innerText = answers[i];
-    answerButtons[i].onclick = () => {
-      next();
-    };
-  }
-
-</script>
-</body>
+      var answerButtons = document.getElementsByClassName("answer");
+      for (var i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].innerText = answers[i];
+        answerButtons[i].onclick = () => {
+          next();
+        };
+      }
+    </script>
+  </body>
 </html>

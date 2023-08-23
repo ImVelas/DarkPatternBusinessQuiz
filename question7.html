@@ -6,39 +6,31 @@
     <link rel="stylesheet" href="question.css"/>
   </head>
   <body>
-    <div class="switchContainer">7 / 9</div>
+    <div class="switchContainer">7 / 15</div>
 
     <div class="question-container">
       <div id="question"></div>
 
       <div id="answers">
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
+        <button class="answer a1"></button>
+        <button class="answer a2"></button>
+        <button class="answer a3"></button>
+        <button class="answer a4"></button>
       </div>
     </div>
 
     <script>
-      function prev() {
-        document.location.href = "question6.html";
-      }
-
-      function end() {
-        document.location.href = "result.html";
-      }
-
       function next() {
         document.location.href = "question8.html";
       }
 
       //question and answers
-      var questionText = "Wie heißt die Autorin von Harry Potter nicht?";
+      var questionText = "Wann wurde Dumbledore geboren?";
       var answers = [
-        "Joanne Kathleen Rowling",
-        "Johanne Katherine Rowling",
-        "Johanne Kimberly Rowling",
-        "Joanne Kate Rowling",
+        "September, 1880",
+        "August, 1881",
+        "Oktober, 1882",
+        "Mai, 1885",
       ];
 
       //question text

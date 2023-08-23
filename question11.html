@@ -6,13 +6,11 @@
     <link rel="stylesheet" href="question.css"/>
   </head>
   <body>
-    <div class="switchContainer">2 / 15</div>
+    <div class="switchContainer">11 / 15</div>
 
     <div class="question-container">
       <div id="question"></div>
-      <div id="timerContainer" style="display: none">
-        <h2 class="timer" id="timerText"></h2>
-      </div>
+
       <div id="answers">
         <button class="answer"></button>
         <button class="answer"></button>
@@ -23,21 +21,23 @@
 
     <script>
       function next() {
-        document.location.href = "question3.html";
+        document.location.href = "question12.html";
       }
 
-      var questionText =
-        "In welchem Haus wurde Harry Potter in Hogwarts eingeschult?";
+      //question and answers
+      var questionText = "Wie heißt die Autorin von Harry Potter nicht?";
       var answers = [
-        "Gryffindor",
-        "Slytherin",
-        "Hufflepuff",
-        "Ravenclaw",
+        "Joanne Kathleen Rowling",
+        "Johanne Katherine Rowling",
+        "Johanne Kimberly Rowling",
+        "Joanne Kate Rowling",
       ];
 
+      //question text
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
 
+      //button texts
       var answerButtons = document.getElementsByClassName("answer");
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];

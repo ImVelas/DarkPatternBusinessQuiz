@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Fragen</title>
+  <link rel="stylesheet" href="question.css"/>
+</head>
+<body>
+<div class="switchContainer">10 / 15</div>
+
+<div class="question-container">
+  <div id="question"></div>
+  <div>
+    <img src="images/wizard.png">
+  </div>
+  <div id="answers">
+    <button class="answer"></button>
+    <button class="answer"></button>
+    <button class="answer"></button>
+    <button class="answer"></button>
+  </div>
+</div>
+
+<script>
+  function next() {
+    document.location.href = "question11.html";
+  }
+
+  var questionText =
+          "Wie heißt der Mann vorne im Bild?";
+  var answers = [
+    "Kingsley Shacklebolt",
+    "Cornelius Fudge",
+    "Rufus Scrimgeour",
+    "Pius Thicknesse",
+  ];
+
+  var questionElement = document.getElementById("question");
+  questionElement.innerText = questionText;
+
+  var answerButtons = document.getElementsByClassName("answer");
+  for (var i = 0; i < answerButtons.length; i++) {
+    answerButtons[i].innerText = answers[i];
+    answerButtons[i].onclick = () => {
+      next();
+    };
+  }
+
+</script>
+</body>
+</html>

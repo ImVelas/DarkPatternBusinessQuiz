@@ -1,80 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Fragen</title>
     <link rel="stylesheet" href="question.css"/>
   </head>
   <body>
-    <div class="switchContainer">3 / 7</div>
+    <div class="switchContainer">3 / 15</div>
 
     <div class="question-container">
       <div id="question"></div>
-      <div id="timerContainer" style="display: none">
-        <h2 class="timer" id="timerText"></h2>
-      </div>
+
       <div id="answers">
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
+        <div>
+          <img class="answer-image" alt="Antwortmöglichkeit 1"/>
+          <img class="answer-image" alt="Antwortmöglichkeit 2"/>
+        </div>
+        <div>
+          <img class="answer-image" alt="Antwortmöglichkeit 3"/>
+          <img class="ad-image" alt="Antwortmöglichkeit 4" src = "images/v_247.png"/>
+        </div>
       </div>
     </div>
 
     <script>
-      function prev() {
-        document.location.href = "question2.html";
-      }
-
-      function end() {
-        document.location.href = "result.html";
-      }
-
       function next() {
         document.location.href = "question4.html";
       }
-      var questionText =
-        "Wie heißt der Pervelle-Bruder, der den Elderstab vom Tod persönlich bekommen hat?";
-      var answers = [
-        "Marcus Pervelle",
-        "Antioch Pervelle",
-        "Cadmus Pervelle",
-        "Ignotus Pervelle ",
-      ];
+
+      //question and answers
+      var questionText = "In welchem Verlies lag der Stein der Weisen?";
 
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
 
-      var answerButtons = document.getElementsByClassName("answer");
-      for (var i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].innerText = answers[i];
-        answerButtons[i].onclick = () => {
-          next();
+      //question text
+      var answerImages = [
+        "images/v_913.png",
+        "images/v_666.png",
+        "images/v_713.png"
+      ];
+
+      var adImageElement = document.querySelector(".ad-image");
+      adImageElement.addEventListener("click", () => {
+        let data = JSON.parse(localStorage.getItem('formData'));
+        if (!data) {
+          data = [
+            {
+              name: 'Cookie-Selection',
+              description: 'denied?',
+              value: false
+            },
+            {
+              name: 'Opt-Out',
+              description: 'pressed?',
+              value: false,
+            },
+            {
+              name: 'Preselection',
+              description: 'disbaled?',
+              value: false,
+            },
+            {
+              name: 'Disguised Ads',
+              description: 'clickCount',
+              value: 0,
+            }
+          ];
+        }
+
+        data[3].value++;
+        localStorage.setItem('formData', JSON.stringify(data));
+
+        document.location.href = "ad.html";
+      });
+
+      var answerImageElements = document.getElementsByClassName("answer-image");
+      for (var i = 0; i < answerImageElements.length; i++) {
+        answerImageElements[i].src = answerImages[i];
+        answerImageElements[i].onclick = () => {
+          proceedToNextQuestion(true);
         };
       }
 
-      // Timer
-      var timerContainer = document.getElementById("timerContainer");
-      var timerText = document.getElementById("timerText");
-      var timer = 7;
-      var timerInterval;
-
-      function startTimer() {
-        timerContainer.style.display = "block";
-        timerInterval = setInterval(updateTimer, 1000);
-      }
-
-      function updateTimer() {
-        if (timer > 0) {
-          timerText.innerText = "Timer: " + timer + " Sekunden";
-          timer--;
-        } else {
-          clearInterval(timerInterval);
-          timerContainer.style.display = "none";
+      // confirm answer
+      function proceedToNextQuestion(shouldProceed) {
+        if (shouldProceed) {
+          next();
         }
       }
-
-      startTimer();
     </script>
   </body>
 </html>

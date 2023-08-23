@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Fragen</title>
+  <link rel="stylesheet" href="question.css"/>
+</head>
+<body>
+<div class="switchContainer">14 / 15</div>
+
+<div class="question-container">
+  <div id="question"></div>
+
+  <div id="answers">
+    <div>
+      <img class="answer-image" />
+      <img class="answer-image" />
+    </div>
+    <div>
+      <img class="answer-image" />
+      <img class="answer-image" />
+    </div>
+  </div>
+</div>
+
+<script>
+  function next() {
+    document.location.href = "question15.html";
+  }
+
+  //question and answers
+  var questionText = "Wie heißt die Eule von Harry?";
+  var answerImages = [
+    "images/Trevor.png",
+    "images/Krummbein.png",
+    "images/Hedwig.png",
+    "images/Peeves.png"
+  ];
+
+  //question text
+  var questionElement = document.getElementById("question");
+  questionElement.innerText = questionText;
+
+  //answer images
+  var answerImageElements = document.getElementsByClassName("answer-image");
+  for (var i = 0; i < answerImageElements.length; i++) {
+    answerImageElements[i].src = answerImages[i];
+    answerImageElements[i].onclick = () => {
+      next();
+    };
+  }
+
+</script>
+</body>
+</html>
