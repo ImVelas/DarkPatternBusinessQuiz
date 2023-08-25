@@ -18,8 +18,14 @@
         <button class="answer"></button>
       </div>
     </div>
-
+    <div class="button-container">
+      <button class="switch" onclick="end()">Beenden</button>
+    </div>
     <script>
+      var nextButton = document.querySelector("div.button-container button");
+      nextButton.disabled = true;
+      const correctAnswerNumber = 0;
+
       let data = JSON.parse(localStorage.getItem('formData'));
       if (!data) {
         data = [
@@ -44,10 +50,6 @@
             value: 0,
           }
         ];
-      }
-
-      function prev() {
-        document.location.href = "question8.html";
       }
 
       function end() {
@@ -83,6 +85,20 @@
 
         xhr.send(blob);
       }
+      function displayBorders() {
+        var answerElements = document.getElementsByClassName("answer");
+        for (var i = 0; i < answerElements.length; i++) {
+          answerElements[i].disabled = true;
+          answerElements[i].onclick = () => {
+          };
+          if (i === correctAnswerNumber) {
+            answerElements[i].style.border = "3px solid #10da10"
+          } else {
+            answerElements[i].style.border = "3px solid #d33e3e"
+          }
+          nextButton.disabled = false;
+        }
+      }
 
       //question and answers
       var questionText = "Wie viel zahlt Harry für sein Ticket für den fahrenden Ritter inklusive heißer Schokolade?";
@@ -101,8 +117,9 @@
       var answerButtons = document.getElementsByClassName("answer");
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];
+        answerButtons[i].style.border = "3px solid #4caf50";
         answerButtons[i].onclick = () => {
-          end();
+          displayBorders();
         };
       }
     </script>

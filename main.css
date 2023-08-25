@@ -156,7 +156,7 @@ body {
 }
 
 .cookie-button {
-    padding: 10px 20px;
+    padding: 11px 21px;
     font-size: 16px;
     cursor: pointer;
     background-color: #4CAF50;
@@ -165,23 +165,23 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+    margin-right: 10px;
 }
 
 .cookie-button-deny {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #a72c27;
-    color: #fff;
-    border: none;
+    background-color: #fff;
+    color: #83b786;
+    border: 1px solid #83b786;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
 }
 
 .cookie-button:hover {
     background-color: #45a049;
 }
+
 
 .overlay {
     position: fixed;

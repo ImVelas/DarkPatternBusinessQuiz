@@ -20,29 +20,50 @@
         <button class="answer"></button>
       </div>
     </div>
-
+    <div class="button-container">
+      <button class="switch" onclick="next()">weiter</button>
+    </div>
     <script>
+      var nextButton = document.querySelector("div.button-container button");
+      nextButton.disabled = true;
+      const correctAnswerNumber = 3;
      function next() {
         document.location.href = "question14.html";
       }
-      var questionText =
-        "Wie heißen Harry Potters Onkel und Tante, bei denen er nach dem Tod seiner Eltern aufwächst?";
-      var answers = [
-        "Albert und Margaret Granger",
-        "Frank und Alice Longbottom",
-        "Richard und Lily Evans",
-        "Vernon und Petunia Dursley",
-      ];
+     function displayBorders() {
+       var answerElements = document.getElementsByClassName("answer");
+       for (var i = 0; i < answerElements.length; i++) {
+         answerElements[i].disabled = true;
+         answerElements[i].onclick = () => {
+         };
+         if (i === correctAnswerNumber) {
+           answerElements[i].style.border = "3px solid #10da10"
+         } else {
+           answerElements[i].style.border = "3px solid #d33e3e"
+         }
+         nextButton.disabled = false;
+       }
+     }
 
-      var questionElement = document.getElementById("question");
-      questionElement.innerText = questionText;
+    var questionText =
+      "Wie heißen Harry Potters Onkel und Tante, bei denen er nach dem Tod seiner Eltern aufwächst?";
+    var answers = [
+      "Albert und Margaret Granger",
+      "Frank und Alice Longbottom",
+      "Richard und Lily Evans",
+      "Vernon und Petunia Dursley",
+    ];
 
-      var answerButtons = document.getElementsByClassName("answer");
-      for (var i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].innerText = answers[i];
-        answerButtons[i].onclick = () => {
-          next();
-        };
+    var questionElement = document.getElementById("question");
+    questionElement.innerText = questionText;
+
+    var answerButtons = document.getElementsByClassName("answer");
+     for (var i = 0; i < answerButtons.length; i++) {
+       answerButtons[i].innerText = answers[i];
+       answerButtons[i].style.border = "3px solid #4caf50";
+       answerButtons[i].onclick = () => {
+         displayBorders();
+       };
       }
     </script>
   </body>

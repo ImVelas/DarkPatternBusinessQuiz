@@ -22,15 +22,19 @@
         </div>
       </div>
     </div>
+    <div class="button-container">
+      <button class="switch" onclick="next()">weiter</button>
+    </div>
     <div id="popup">
       <p>Bist du dir ganz sicher, dass das die richtige Antwort ist?</p>
       <button onclick="confirmAnswer(true)">Ja</button>
       <button onclick="confirmAnswer(false)">Nein</button>
     </div>
     <script>
-      function next() {
-        document.location.href = "question2.html";
-      }
+      var answerImageElements = document.getElementsByClassName("answer-image");
+      var nextButton = document.querySelector("div.button-container button");
+      nextButton.disabled = true;
+      const correctAnswerNumber = 2;
 
       //question and answers
       var questionText = "Wie viele Treppen gibt es in Hogwarts?";
@@ -41,17 +45,37 @@
         "images/t_587.png"
       ];
 
+      function displayBorders() {
+        for (var i = 0; i < answerImageElements.length; i++) {
+          answerImageElements[i].style.padding = "2px";
+          answerImageElements[i].disabled = true;
+          answerImageElements[i].onclick = () => {
+          };
+          if (i === correctAnswerNumber) {
+            answerImageElements[i].style.border = "3px solid #10da10"
+          } else {
+            answerImageElements[i].style.border = "3px solid #d33e3e"
+          }
+        }
+        nextButton.disabled = false;
+      }
+      function next() {
+        document.location.href = "question2.html";
+      }
+
       //question text
       var questionElement = document.getElementById("question");
       questionElement.innerText = questionText;
 
       //answer images
-      var answerImageElements = document.getElementsByClassName("answer-image");
       for (var i = 0; i < answerImageElements.length; i++) {
         answerImageElements[i].src = answerImages[i];
+        answerImageElements[i].style.padding = "5px";
+        answerImageElements[i].style.border = "none"
         answerImageElements[i].onclick = () => {
           showConfirmationPopup();
         };
+        answerImageElements[i].disabled = false;
       }
 
       // show confirmation popup
@@ -66,9 +90,11 @@
         popupElement.style.display = "none";
 
         if (shouldProceed) {
-          next();
+          displayBorders();
         }
       }
+
+
     </script>
   </body>
 </html>

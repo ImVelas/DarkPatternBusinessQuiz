@@ -20,10 +20,31 @@
         <button class="answer"></button>
       </div>
     </div>
-
+    <div class="button-container">
+      <button class="switch" onclick="next()">weiter</button>
+    </div>
     <script>
+      var nextButton = document.querySelector("div.button-container button");
+      nextButton.disabled = true;
+      const correctAnswerNumber = 1;
       function next() {
         document.location.href = "question6.html";
+      }
+
+      function displayBorders() {
+        var answerElements = document.getElementsByClassName("answer");
+        for (var i = 0; i < answerElements.length; i++) {
+          answerElements[i].disabled = true;
+          answerElements[i].onclick = () => {
+          };
+          if (i === correctAnswerNumber) {
+            answerElements[i].style.border = "3px solid #10da10"
+          } else {
+            answerElements[i].style.border = "3px solid #d33e3e"
+          }
+        }
+        stopTimer();
+        nextButton.disabled = false;
       }
 
       var questionText =
@@ -41,8 +62,9 @@
       var answerButtons = document.getElementsByClassName("answer");
       for (var i = 0; i < answerButtons.length; i++) {
         answerButtons[i].innerText = answers[i];
+        answerButtons[i].style.border = "3px solid #4caf50";
         answerButtons[i].onclick = () => {
-          next();
+          displayBorders();
         };
       }
 
@@ -65,6 +87,10 @@
           clearInterval(timerInterval);
           timerContainer.style.display = "none";
         }
+      }
+      function stopTimer() {
+        clearInterval(timerInterval);
+        timerContainer.style.display = "none";
       }
 
       startTimer();

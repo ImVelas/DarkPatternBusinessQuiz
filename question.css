@@ -44,6 +44,17 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.button-container {
+    background-color: #fff;
+    width: fit-content;
+    align-self: center;
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .question-container {
     min-width: 400px;
     margin: 0 auto;
@@ -59,7 +70,7 @@ body {
     font-style: italic;
     font-weight: 400;
     cursor: pointer;
-    background-color: #849986;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -68,8 +79,15 @@ body {
 }
 
 .switch:hover {
-    background-color: rgb(92, 114, 93);
+    background-color: #45a049;
 }
+
+.switch:disabled {
+    background-color: #A0C8A1;
+    cursor: default;
+}
+
+
 
 #popup {
     position: fixed;
@@ -111,8 +129,10 @@ body {
     height: 200px;
     cursor: pointer;
     border-radius: 5px;
+    background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    padding: 5px;
 }
 
 .answer-image:hover {
@@ -124,6 +144,7 @@ body {
     height: 200px;
     cursor: pointer;
     border-radius: 5px;
+    padding: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -138,7 +159,7 @@ body {
     cursor: pointer;
     background-color: #4caf50;
     color: #fff;
-    border: none;
+    border: 3px solid #4caf50;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
@@ -146,6 +167,13 @@ body {
 
 .answer:hover {
     background-color: #45a049;
+    border-color: #45a049;
+}
+
+.answer:disabled {
+    background-color: #A0C8A1;
+    border-color: #A0C8A1;
+    cursor: default;
 }
 
 .timer {
